@@ -1,0 +1,869 @@
+
+
+/* =========== GENERAL STYLES =========== */
+
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600&display=swap');
+
+*{
+  margin: 0;
+  padding: 0;
+  border: 0;
+  outline: 0;
+  box-sizing: border-box;
+  list-style: none;
+  text-decoration: none;
+}
+
+:root{
+  --grey: #f4f8fd;
+  --light-grey: #EBEBEB;
+  --light: #ffffff;
+  --blue: #387ee4;
+  --gold: #ffcc00;
+  --dark: #212121;
+  --dark-grey: #939697;
+  --des-text: #555;
+  --paste-8: rgba(35,58,101, 0.8);
+  --green: #00984a;
+  --orange-hover: #cc3700;
+  --green-hover: #00793b;
+  --orange: rgb(255,69,0);
+  --input-focus: rgb(192, 192, 192);
+  --paste: rgb(35,58,101);
+}
+
+html{
+  scroll-behavior: smooth;
+}
+
+::-webkit-scrollbar {
+  display: none;
+} 
+
+
+body{
+  font-family: 'Poppins', sans-serif;
+  background-color: var(--grey);
+  line-height: 1.7;
+}
+
+
+section {
+  height: 100vh;
+  width: 100%;
+}
+
+
+
+
+
+/* ===============================================
+==================================================
+               INDEX FILE DESIGNS
+==================================================
+================================================== */
+
+
+
+
+
+/* =========== NAV STYLES =========== */
+
+nav {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0 30px;
+  width: 95%;
+  height: 80px;
+  border-radius: 13px;
+  position: fixed;
+  top: 20px;
+  left: 50%;
+  transform: translate(-50%);
+  z-index: 9999;
+  background: transparent;
+  transition: 0.5s ease;
+}
+
+nav img {
+  width: 80px;
+  cursor: pointer;
+}
+
+nav ul {
+  display: flex;
+  column-gap: 15px;
+}
+
+nav ul li a {
+  position: relative;
+  font-size: 1.2rem;
+  color: var(--light);
+  font-weight: 600;
+  text-shadow: 1px 2px rgba(0, 0, 0, 0.8);
+  padding: 0 10px;
+}
+
+
+nav ul li .nav-link::after {
+  content: "";
+  position: absolute;
+  background-color: orangered;
+  height: 3px;
+  width: 0;
+  left: 0;
+  bottom: -10px;
+  transition: 0.3s;
+}
+
+nav ul li .nav-link:hover::after {
+  width: 100%;
+}
+
+/* nav ul li .nav-link.active::after {
+  width: 100%;
+} */
+
+nav a button {
+  font-size: 1.2rem;
+  font-weight: 600;
+  padding: 10px 20px;
+  background: orangered;
+  border-radius: 20px;
+  cursor: pointer;
+}
+
+nav a button {
+  color: var(--light);
+}
+
+nav button:hover {
+  transition: 0.2s ease-in;
+  background: #cc3700;
+}
+
+nav.sticky {
+  padding: 0 20px;
+  width: 100%;
+  height: 60px;
+  border-radius: 0;
+  top: 0;
+  left: 50%;
+  background: rgba(35,58,101, 0.8);
+  align-items: center;
+  transition: 0.5s ease;
+}
+
+nav.sticky img {
+  margin-top: 8px;
+  width: 55px;
+}
+
+/* =========== HEADER STYLES =========== */
+
+header {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  background-image: linear-gradient(rgba(35,58,101, 0.9), rgba(35,58,101, 0.8)), url(../Images/mainbg.jpg);
+  background-size: cover;
+  background-position: center;
+  width: 100%;
+  height: 100vh;
+  overflow: hidden;
+  justify-content: center;
+
+}
+
+.header-container {
+  justify-content: center;
+  width: 100%;
+  padding: 0 20px;
+  text-align: center;
+  margin-top: 70px;
+}
+
+.header-container h1 {
+  text-transform: uppercase;
+  font-size: 3.7rem;
+  color: var(--light);
+  text-shadow: 2px 4px rgba(0, 0, 0, 0.8);
+  margin-bottom: 20px;
+}
+
+.header-container h3 {
+  width: 85%;
+  margin: 0 auto;
+  font-size: 1.1rem;
+  font-weight: 500;
+  color: var(--light-grey);
+  text-align: center;
+  margin-bottom: 40px;
+  padding: 0 50px;
+}
+
+.header-nav {
+  display: flex;
+  justify-content: center;
+  column-gap: 60px;
+  padding: 30px 0 0 0;
+}
+
+.header-nav a {
+  display: flex;
+  flex-direction: column;
+  color: var(--light);
+  font-size: 1.1rem;
+  font-weight: 800;
+  height: 150px;
+  width: 250px;
+  background: #00984a;
+  text-align: center;
+  justify-content: center;
+  border-radius: 20px;
+}
+
+.header-nav a i {
+  font-size: 3.5rem;
+  margin-bottom: 10px;
+}
+
+.header-nav a:hover {
+  transition: 0.2s ease-in;
+  background: #00793b;
+}
+
+
+/* =========== ABOUT STYLES =========== */
+
+#about{
+  display: flex;
+  flex-direction: column;
+  text-align: center;
+}
+
+#about h1 {
+  font-size: 2rem;
+  margin-top: 60px;
+  color: var(--des-text);
+}
+
+#about .about-container {
+  height: 100%;
+  width: 100%;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  column-gap: 3rem;
+  align-items: center;
+  justify-content: center;
+  padding: 0 3rem;
+}
+
+.about-container .about-description {
+  font-size: 1.1rem;
+  color: var(--des-text);
+  text-align: justify;
+  height: 460px;
+  width: 700px;
+  align-items: center;
+}
+
+.about-description #about-title {
+  font-size: 1.8rem;
+  text-transform: uppercase;
+  margin-bottom: 20px;
+}
+
+.about-description #about-title #title-two {
+  font-size: 1.3rem;
+  text-transform: uppercase;
+  margin-bottom: 20px;
+}
+
+
+.about-container .about-img {
+  height: 460px;
+  width: 700px;
+}
+
+.about-img img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  border-radius: 10px;
+}
+
+
+/* =========== SERVICES STYLES =========== */
+
+#services {
+  background: var(--light);
+  display: flex;
+  flex-direction: column;
+  text-align: center;
+}
+
+#services #service-title {
+  font-size: 2rem;
+  margin-top: 60px;
+  color: var(--des-text);
+  margin-bottom: 10px;
+}
+
+#services .services-container {
+  height: 100%;
+  width: 100%;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 100px;
+  align-items: center;
+  justify-content: center;
+  padding: 0 3rem;
+}
+
+.services-card {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.services-card img {
+  width: 415px;
+  height: 250px;
+  margin-bottom: 10px;
+  object-fit: cover;
+  border-radius: 10px;
+  border: solid 1px var(--dark);
+}
+
+.services-card .service-content {
+  width: 100%;
+  height: auto;
+  display: flex;
+  flex-direction: column;
+  text-align: justify;
+  color: var(--des-text);
+  margin-bottom: 30px;
+}
+
+.services-card .service-content h1 {
+  text-align: center;
+  margin-bottom: 10px;
+  color: var(--dark);
+}
+
+.services-card .service-content ul {
+  margin-top: 15px;
+  margin-bottom: 50px;
+}
+
+.services-card .service-content ul li {
+  font-size: 1.1rem;
+  font-weight: 600;
+}
+
+/* =========== DOCTORS STYLES =========== */
+
+#doctorlist {
+  display: flex;
+  flex-direction: column;
+  text-align: center;
+}
+
+#doctorlist #doctorlist-title {
+  font-size: 2rem;
+  margin-top: 60px;
+  color: var(--des-text);
+}
+
+#doctorlist .doctorlist-container {
+  height: 100%;
+  width: 100%;
+  align-items: center;
+  justify-content: center;
+  padding: 3rem 3rem;
+}
+
+.swiper-slide {
+  text-align: center;
+  font-size: 18px;
+  background: var(--light);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 15px;
+  overflow: hidden;
+}
+
+.swiper {
+  height: 500px;
+  width: 80%;
+}
+
+.swiper-slide img {
+  width: 100%;
+  height: 350px;
+  object-fit: cover;
+}
+
+.swiper-slide .doctor-content {
+  display: flex;
+  flex-direction: column;
+  margin-top: 20px;
+  padding: 0 10px;
+}
+
+.swiper-slide .doctor-content h3 {
+  font-size: 1.2rem;
+  color: var(--des-text);
+}
+
+
+/* =========== CONTACT STYLES =========== */
+
+#contact {
+  background: var(--light);
+  display: flex;
+  flex-direction: column;
+  text-align: center;
+}
+
+#contact #contact-title {
+  font-size: 2rem;
+  margin-top: 60px;
+  color: var(--des-text);
+}
+
+#contact .contact-container {
+  height: 100%;
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  gap: 20px;
+  align-items: center;
+  justify-content: center;
+  padding: 0 3rem;
+}
+
+.contact-container .left-container h3 {
+  margin-top: 20px;
+  color: var(--des-text);
+}
+
+.contact-container .left-container {
+  height: 500px;
+  width: 700px;
+  background-color: var(--grey);
+  border-radius: 15px;
+}
+
+.left-container form {
+  height: 100%;
+  width: 100%;
+  padding: 30px 35px;
+  text-align: left;
+}
+
+
+.input-row {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 20px;
+}
+
+.input-row .input-group {
+  flex-basis: 45%;
+}
+
+
+.left-container form input {
+  width: 100%;
+  border: none;
+  border-bottom: 1px solid var(--blue);
+  outline: none;
+  padding-bottom: 5px;
+  background: transparent;
+}
+
+.left-container form textarea {
+  width: 100%;
+  border: 1px solid var(--blue);
+  outline: none;
+  padding: 10px;
+  box-sizing: border-box;
+  resize: none;
+  background: transparent;
+}
+
+.left-container form label {
+  margin-bottom: 6px;
+  display: block;
+  color: var(--paste);
+}
+
+.left-container form button {
+  background: var(--blue);
+  border: none;
+  outline: none;
+  color: var(--light);
+  padding: 15px 20px;
+  width: 100%;
+  border-radius: 30px;
+  margin-top: 30px;
+  box-shadow: 0px 5px 15px 0px rgba(28, 0, 181, 0.3);
+}
+
+.contact-container .right-container {
+  display: flex;
+  flex-direction: column;
+}
+
+.right-container .right-up {
+  height: 240px;
+  width: 350px;
+  background-color: rgba(35,58,101);
+  border-radius: 15px;
+  padding: 20px;
+}
+
+.right-up h3 {
+  font-size: 1.2rem;
+  color: var(--light);
+}
+
+.right-up .contact-link {
+  display: flex;
+  text-align: left;
+  margin-top: 15px;
+  align-items: center;
+  font-size: 1rem;
+}
+
+.contact-link .icon {
+  background-color: var(--blue);
+  border-radius: 50%;
+  padding: 5px 10px;
+  margin-right: 10px;
+  color: var(--light);
+  font-size: 1rem;
+}
+
+.contact-link a {
+  font-size: 1rem;
+  color: var(--light);
+}
+
+.contact-link .info {
+  font-weight: 800;
+}
+
+.right-container .right-down {
+  margin-top: 20px;
+  height: 240px;
+  width: 350px;
+  background-color: var(--grey);
+  border-radius: 15px;
+  overflow: hidden;
+}
+
+
+/* =========== FOOTER STYLES =========== */
+
+footer {
+  width: 100%;
+  height: auto;
+}
+
+footer .footer-container {
+  width: 100%;
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  padding: 2rem 6rem;
+  column-gap: 10px;
+}
+
+.footer-container .footer-left {
+  display: flex;
+  flex-direction: column;
+}
+
+.footer-left .logo-slogan {
+  display: flex;
+  flex-direction: row;
+}
+
+.footer-left img {
+  width: 70px;
+}
+
+.slogan-container {
+  display: flex;
+  flex-direction: column;
+  text-align: end;
+  justify-content: center;
+}
+
+.footer-left h1 {
+  font-size: 1rem;
+  margin-left: 10px;
+}
+
+.footer-left span {
+  font-size: 0.8rem;
+  font-weight: 600;
+  color: var(--des-text);
+}
+
+.footer-left .description {
+  margin-top: 20px;
+  font-size: 1rem;
+  text-align: justify;
+  color: var(--des-text);
+}
+
+.footer-middle {
+  text-align: center;
+}
+
+.footer-middle h1 {
+  font-size: 1.2rem;
+}
+
+.footer-middle ul {
+  margin-top: 15px;
+}
+
+.footer-middle ul li {
+  font-size: 1.1rem;
+  margin-top: 5px;
+  font-weight: 500;
+}
+
+.footer-middle ul li a {
+  color: var(--des-text);
+}
+
+.footer-middle ul li a:hover {
+  color: var(--blue);
+}
+
+.footer-right {
+  display: flex;
+  flex-direction: column;
+}
+
+.footer-right .search {
+  display: flex;
+  flex-direction: row;
+}
+
+.search form {
+  width: 100%;
+  height: 55px;
+  display: flex;
+  border-radius: 10px;
+  border: 1px solid var(--dark);
+
+}
+
+.search form input {
+  flex: 1;
+  border: none;
+  outline: none;
+  padding: 10px;
+  border-radius: 10px 0 0 10px;
+}
+
+.search form button {
+  background: var(--blue);
+  padding: 10px 40px;
+  border: none;
+  outline: none;
+  color: var(--light);
+  letter-spacing: 1px;
+  cursor: pointer;
+  border-radius: 0 10px 10px 0;
+}
+
+.socials {
+  margin-top: 30px;
+  text-align: center;
+}
+
+.socials h1 {
+  font-size: 1.2rem;
+}
+
+.socials .social-icons {
+  margin-top: 20px;
+}
+
+.social-icons a {
+  padding: 5px 10px;
+  border-radius: 50%;
+  background: var(--blue);
+  font-size: 2rem;
+  color: var(--light);
+  margin-left: 10px;
+}
+
+.credit {
+  display: flex;
+  flex-direction: column;
+  text-align: center;
+  background: var(--blue);
+  padding: 0.5rem;
+}
+
+.credit p {
+  font-size: 1rem;
+  color: var(--light);
+}
+
+.credit p a {
+  margin-left: 5px;
+  font-size: 1.1rem;
+  font-weight: 800;
+  color: var(--light);
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* ===============================================
+==================================================
+               ACCOUNT MODULE DESIGNS
+==================================================
+================================================== */
+
+
+
+
+
+/* =========== LOGIN FORM STYLES =========== */
+
+/* .login {
+  top: 50%;
+  left: 50%;
+  position: absolute;
+  transform: translate(-50%, -50%);
+} */
+
+.login-container {
+  width: 330px;
+  padding: 2rem 1rem;
+  background: var(--light);
+  top: 50%;
+  left: 50%;
+  position: absolute;
+  transform: translate(-50%, -50%);
+  box-sizing: border-box;
+  border-radius: 10px;
+  box-shadow: 0 20px 35px rgba(0, 0, 0, 0.2);
+  text-align: center;
+}
+
+.login-container img {
+  width: 120px;
+  height: 120px;
+  border-radius: 50%;
+  position: absolute;
+  top: -50px;
+  left: calc(50% - 65px);
+}
+
+.login-container h1 {
+  margin-top: 40px;
+  font-size: 2rem;
+  margin-bottom: 1.2rem;
+}
+
+.error-message {
+  color: #af4242;
+  background: #fde8ec;
+  margin-bottom: 20px;
+  border-radius: 5px;
+}
+
+
+.login-container form input,
+.login-container form select {
+  width: 100%;
+  outline: none;
+  border: 1px solid #fff;
+  padding: 12px 20px;
+  margin-bottom: 10px;
+  border-radius: 20px;
+  background: var(--grey);
+}
+
+.login-container button {
+  font-size: 1rem;
+  margin-top: 1.8rem;
+  padding: 10px 0;
+  border-radius: 20px;
+  outline: none;
+  border: none;
+  width: 90%;
+  color: var(--light);
+  cursor: pointer;
+  background: var(--blue);
+}
+
+.login-container input:focus {
+  border: 1px solid rgb(192, 192, 192);
+}
+
+.login-container .member {
+  font-size: 0.8rem;
+  margin-top: 1.4rem;
+  color: var(--des-text);
+}
+
+.login-container .member a {
+  color: var(--blue);
+}
+
+
+/* =========== REGISTER FORM STYLES =========== */
+
+.register-container {
+  padding: 2rem 2rem;
+  width: 660px;
+}
+
+.register-container form input {
+  width: 100%;
+}
+
+
+.register .register-input-row {
+  display: flex;
+  justify-content: space-between;
+}
+
+.register .register-input-group {
+  flex-basis: 48%;
+}
+
+.register-input-group-column {
+  text-align: left;
+  flex-basis: 32%;
+}
+
+.register-input-group-column label {
+  margin-left: 10px;
+  font-size: 0.8rem;
+}
